@@ -1,0 +1,62 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins&display=swap");
+:root {
+  /* Sizes */
+  --container-size: 400px;
+  --border-radius: 15px;
+  --gap: 30px;
+  --icon-size: 2em;
+  /* Colors */
+  --bg-color: rgb(10, 10, 10);
+  --text-color: rgb(143, 143, 143);
+  --accent-color: rgb(47, 250, 28);
+  /* Shadows */
+  --outer-shadow-lg: 6px 6px 12px rgba(0, 0, 0, 1),
+    -6px -6px 12px rgba(255, 255, 255, 0.15);
+  --outer-shadow-sm: 3px 3px 6px rgba(0, 0, 0, 1),
+    -3px -3px 6px rgba(255, 255, 255, 0.3);
+  --inner-shadow-sm: inset 3px 3px 6px rgba(0, 0, 0, 1),
+    inset -3px -3px 6px rgba(255, 255, 255, 0.1);
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: Poppins, sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.toggles-container {
+  width: var(--container-size);
+  height: var(--container-size);
+  padding: var(--gap);
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  grid-column-gap: var(--gap);
+  grid-row-gap: var(--gap);
+  box-shadow: var(--outer-shadow-lg);
+  border-radius: var(--border-radius);
+}
+.toggle-box {
+  border-radius: var(--border-radius);
+  box-shadow: var(--outer-shadow-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  transition: box-shadow 700ms ease, color 700ms ease;
+}
+.toggle-pressed {
+  box-shadow: var(--outer-shadow-sm), var(--inner-shadow-sm);
+  color: var(--accent-color);
+}
+.toggle-icon {
+  font-size: var(--icon-size);
+}
